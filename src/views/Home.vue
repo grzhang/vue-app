@@ -23,7 +23,7 @@
         },
         methods:{
             handleDelete(id){
-                axios.delete(`http://jsonplaceholder.typicode.com/todos/${id}`).then(
+                axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`).then(
                     res => this.todos = this.todos.filter(todo => todo.id !== id)
                 )
 
@@ -31,7 +31,7 @@
             handleAdd(newTodo){
                 const {title,completed} = newTodo;
                 axios
-                    .post("http://jsonplaceholder.typicode.com/todos",{
+                    .post("https://jsonplaceholder.typicode.com/todos",{
                         title,
                         completed
                     })
@@ -42,7 +42,7 @@
         },
         created(){
             axios
-                .get('http://jsonplaceholder.typicode.com/todos?_limit=10')
+                .get('https://jsonplaceholder.typicode.com/todos?_limit=10')
                 .then(res => this.todos = res.data)
                 .catch(function (error) {
                     console.log(error);
